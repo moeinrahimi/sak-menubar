@@ -10,6 +10,7 @@ let notif = {
 }
 let tray = null
 app.on('ready', () => {
+
     tray = new Tray(icon)
     const contextMenu = Menu.buildFromTemplate([{
             label: 'set Google',
@@ -50,8 +51,9 @@ app.on('ready', () => {
         {
             label: 'clear DNS',
             click: () => {
-                let a = network.getActiveEthernet()
-                network.deleteDNS(a, function(e, r) {
+              let ethernet = network.getActiveEthernet()
+              network.deleteDNS(ethernet, function (e, r) {
+                console.log(e, r)
                     notifier.notify(notif);
                 })
             }
