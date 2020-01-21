@@ -1,8 +1,8 @@
-const { app, Menu, Tray } = require('electron')
+const { app, Menu, Tray,nativeImage } = require('electron')
 const notifier = require('node-notifier');
 const network = require('./helpers/network')
 const path = require('path')
-let icon = path.resolve(__dirname, 'assets/icon.ico')
+let icon = path.join(__dirname, 'assets/swiss-army-knife.png')
 let notif = {
     title: 'swiss army knife',
     icon: icon,
@@ -10,8 +10,9 @@ let notif = {
 }
 let tray = null
 app.on('ready', () => {
-
-    tray = new Tray(icon)
+  const nimage = nativeImage.createFromPath(icon);
+  console.log(nimage,'s',icon)
+    tray = new Tray(nimage)
     const contextMenu = Menu.buildFromTemplate([{
             label: 'set Google',
             click: () => {

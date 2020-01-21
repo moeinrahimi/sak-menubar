@@ -8,7 +8,6 @@
   "scripts": {
     "start": "electron .",
     "dist": "./node_modules/.bin/electron-builder "
-
   },
   "build": {
     "linux": {
@@ -22,7 +21,6 @@
       "icon": "assets/icon.ico"
     }
   },
-
   "devDependencies": {
     "electron": "^7.1.9",
     "electron-builder": "^22.2.0"
