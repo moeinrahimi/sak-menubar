@@ -54,3 +54,15 @@ module.exports.getActiveEthernet = () => {
 
   return active
 }
+
+const nameservers = {
+  "google":["8.8.8.8","4.2.2.4"]
+}
+module.exports.setResolveFile = (key="google") => {
+  let names = nameservers[key]
+  const path = require('path')
+let url = path.join(__dirname, '/script.sh')
+  sudo.exec(`sh ${url} ${names[0]} ${names[1]}`,options,function(e,r){
+    console.log(e,r)
+  })
+}
