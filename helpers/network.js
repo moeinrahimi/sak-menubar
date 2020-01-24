@@ -40,7 +40,6 @@ module.exports.deleteDNS = (ethernet,done) => {
 
   })
 }
-// netsh interface ip delete dnsserver "Ethernet 7" all
 
 
 module.exports.getActiveEthernet = () => {
@@ -56,13 +55,23 @@ module.exports.getActiveEthernet = () => {
 }
 
 const nameservers = {
-  "google":["8.8.8.8","4.2.2.4"]
+  "google": ["8.8.8.8", "4.2.2.4"],
+  "shecan": ["178.22.122.100","185.51.200.2"],
+  "cloudflare":["1.1.1.1",""]
 }
 module.exports.setResolveFile = (key="google") => {
   let names = nameservers[key]
   const path = require('path')
-let url = path.join(__dirname, '/script.sh')
-  sudo.exec(`sh ${url} ${names[0]} ${names[1]}`,options,function(e,r){
+  let url = path.join(__dirname, '/script.sh')
+  sudo.exec(`sh ${url} ${names[0]} setDNS ${names[1]}`,options,function(e,r){
+    console.log(e,r)
+  })
+}
+
+module.exports.clearResolveFile = (key="google") => {
+  const path = require('path')
+  let url = path.join(__dirname, '/script.sh')
+  sudo.exec(`sh ${url} clear`,options,function(e,r){
     console.log(e,r)
   })
 }

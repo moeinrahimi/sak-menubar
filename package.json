@@ -26,6 +26,7 @@
     "electron-builder": "^22.2.0"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "node-notifier": "^6.0.0",
     "sudo-prompt": "^9.1.1"
   }

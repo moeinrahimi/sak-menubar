@@ -1,5 +1,12 @@
-echo $1
-echo $2
-printf "nameserver $1\n nameserver $2\n" > /etc/resolv.conf
-cat /etc/resolv.conf
+task=$1
 
+if [  $task = 'setDNS'  ]
+then
+  echo 'setDNS'
+  printf "nameserver $2\n nameserver $3\n" > /etc/resolv.conf
+  cat /etc/resolv.conf
+elif  [ $task = 'clearDNS' ]
+then
+  echo 'clear setDNS'
+  echo "" > /etc/resolv.conf
+fi
