@@ -2,7 +2,7 @@
   "name": "sak-menubar",
   "repository": "https://github.com/moeinrahimi/sak-menubar",
   "author": "moein rahimi",
-  "email":"imrrahimi@gmail.com",
+  "email": "imrrahimi@gmail.com",
   "version": "0.0.1",
   "description": "swiss army knife menubar",
   "main": "main.js",
@@ -10,10 +10,16 @@
     "start": "electron .",
     "dist": "./node_modules/.bin/electron-builder ",
     "build": "electron-builder build --linux --win --publish never",
-    "deploy": "electron-builder build --linux --win --publish always"
-
+    "deploy": "electron-builder build  --win  --publish always"
   },
   "build": {
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "moeinrahimi",
+        "repo": "sak-menubar"
+      }
+    ],
     "appId": "com.sak-menubar.app",
     "linux": {
       "target": [
@@ -31,6 +37,7 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
+    "electron-updater": "^4.2.0",
     "node-notifier": "^6.0.0",
     "sudo-prompt": "^9.1.1"
   }
