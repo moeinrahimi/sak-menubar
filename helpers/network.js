@@ -1,7 +1,7 @@
 const path = require('path')
 const  os  =require( 'os');
 var sudo = require('sudo-prompt');
-let icon = path.resolve(__dirname, 'assets/icon.ico')
+let icon = path.resolve(__dirname, 'build/icon.ico')
 var options = {
   name: 'sak',
   icns: icon, // (optional)

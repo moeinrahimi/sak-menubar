@@ -3,7 +3,7 @@ const notifier = require('node-notifier');
 const network = require('./helpers/network')
 const currency = require('./helpers/currency')
 const path = require('path')
-let icon = path.join(__dirname, 'assets/swiss-army-knife.png')
+let icon = path.join(__dirname, 'build/icon.png')
 const os = require('os')
 let notif = {
     title: 'swiss army knife',

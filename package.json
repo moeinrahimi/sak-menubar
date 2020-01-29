@@ -2,7 +2,7 @@
   "name": "sak-menubar",
   "repository": "https://github.com/moeinrahimi/sak-menubar",
   "author": "moein rahimi",
-  "email":"imrrahimi@gmail.com",
+  "email": "imrrahimi@gmail.com",
   "version": "0.0.1",
   "description": "swiss army knife menubar",
   "main": "main.js",
@@ -11,11 +11,12 @@
     "dist": "./node_modules/.bin/electron-builder ",
     "build": "electron-builder build --linux --win --publish never",
     "deploy": "electron-builder build --linux --win --publish always"
-
   },
   "build": {
     "appId": "com.sak-menubar.app",
     "linux": {
+      "category": "Utility",
+      "description": "sak-menubar is packaged with handfull utils such as easy dns setting and currency update",
       "target": [
         "AppImage"
       ]
