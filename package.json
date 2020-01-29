@@ -10,7 +10,11 @@
     "start": "electron .",
     "dist": "./node_modules/.bin/electron-builder ",
     "build": "electron-builder build --linux --win --publish never",
+<<<<<<< HEAD
     "deploy": "electron-builder build  --win  --publish always"
+=======
+    "deploy": "electron-builder build --linux --win --publish always"
+>>>>>>> e6772d32659bb094eb1bd51f06a387d49f7ca904
   },
   "build": {
     "publish": [
@@ -22,6 +26,8 @@
     ],
     "appId": "com.sak-menubar.app",
     "linux": {
+      "category": "Utility",
+      "description": "sak-menubar is packaged with handfull utils such as easy dns setting and currency update",
       "target": [
         "AppImage"
       ]
