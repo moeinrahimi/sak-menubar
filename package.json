@@ -3,7 +3,7 @@
   "repository": "https://github.com/moeinrahimi/sak-menubar",
   "author": "moein rahimi",
   "email": "imrrahimi@gmail.com",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "swiss army knife menubar",
   "main": "main.js",
   "scripts": {
