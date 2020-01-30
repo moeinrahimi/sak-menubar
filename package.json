@@ -8,7 +8,6 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "dist": "./node_modules/.bin/electron-builder ",
     "build": "electron-builder build  --win --publish never",
     "deploy": "electron-builder build  --win  --publish always"
   },
@@ -30,7 +29,7 @@
     },
     "win": {
       "target": "nsis",
-      "icon": "build/icon.ico"
+      "icon": "assets/icons/icon.png"
     }
   },
   "devDependencies": {
@@ -40,6 +39,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "electron-updater": "^4.2.0",
+    "github-remove-all-releases": "^1.0.1",
     "node-notifier": "^6.0.0",
     "sudo-prompt": "^9.1.1"
   }

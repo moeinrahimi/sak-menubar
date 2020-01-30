@@ -4,7 +4,7 @@ const network = require('./helpers/network')
 const currency = require('./helpers/currency')
 const path = require('path')
 const {autoUpdater} = require("electron-updater");
-let icon = path.join(__dirname, 'build/icon.png')
+let icon = path.join(__dirname, '/assets/icons/icon.png')
 const os = require('os')
 let notif = {
     title: 'swiss army knife',
